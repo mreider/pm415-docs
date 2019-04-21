@@ -119,7 +119,7 @@ Gets info about all of the orgs. There are no request parameters - only a respon
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "success": true,
     "organizations": [
@@ -203,7 +203,7 @@ ID of the org you want to switch to
 Switched orgs
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "success": true,
     "organization": 1,
@@ -248,13 +248,13 @@ ID of the org you want to update
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-`{  
-   "success": true,  
-   "organization": 6  
+`{    
+"success": true,    
+"organization": 6    
 }`
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -292,7 +292,7 @@ The ID of the org you want to delete
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "success": true
 }
@@ -332,7 +332,7 @@ ID of the org you want to query
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     "success": true,
     "users": [
@@ -366,9 +366,7 @@ Validate an user invite token
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Checks an invite token to see if it is valid and who it belongs to.  
-
-_This method is used by the PM415 user interface and may not have any other practical use case._
+Checks an invite token to see if it is valid and who it belongs to._This method is used by the PM415 user interface and may not have any other practical use case._
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -392,7 +390,7 @@ Invitation token sent to a user.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
     success: true,
     "email": "mattreider@tmail.com",
@@ -434,7 +432,7 @@ Creates an invite link for a new user.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
    "success": true,
    "confirmUrl": "https://pm415.com/account/invite/?token=eyJh
@@ -481,7 +479,7 @@ The ID of the org you want to work with
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
    "success": true
 }
@@ -502,7 +500,8 @@ Gives a user admin privileges. Admins can perform all operations on an org and i
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":orgid" type="string" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -526,7 +525,7 @@ The ID of the org you want to work with
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
    "success": true
 }
@@ -535,7 +534,6 @@ The ID of the org you want to work with
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
 
 {% api-method method="put" host="https://pm415.com" path="/api/org/:orgid/admin/revoke" %}
 {% api-method-summary %}
@@ -548,7 +546,8 @@ Revokes a user's admin privileges.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":orgid" type="string" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -572,7 +571,7 @@ The ID of the org you want to work with
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
    "success": true
 }
@@ -581,7 +580,6 @@ The ID of the org you want to work with
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
 
 {% api-method method="put" host="https://pm415.com" path="/api/org/:orgid/admin/resetpassword" %}
 {% api-method-summary %}
@@ -594,7 +592,8 @@ Resets user passwords and sends emails with reset links.
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":orgid" type="string" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -618,7 +617,7 @@ The ID of the org you want to work with
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {
    "success": true
 }
@@ -627,3 +626,4 @@ The ID of the org you want to work with
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
