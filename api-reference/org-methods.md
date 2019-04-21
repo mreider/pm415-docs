@@ -367,7 +367,7 @@ Validate an user invite token
 
 {% api-method-description %}
 Checks an invite token to see if it is valid and who it belongs to.  
-  
+
 _This method is used by the PM415 user interface and may not have any other practical use case._
 {% endapi-method-description %}
 
@@ -457,7 +457,7 @@ Removes users from an organization. This does not delete the user's profile - ju
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-parameter name=":orgids" type="string" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -497,7 +497,7 @@ Grant admin
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gives a user admin privileges. Admins can perform all operations on an org and its users. 
+Gives a user admin privileges. Admins can perform all operations on an org and its users.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -522,4 +522,3 @@ Gives a user admin privileges. Admins can perform all operations on an org and i
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
