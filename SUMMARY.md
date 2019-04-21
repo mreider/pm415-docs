@@ -15,6 +15,12 @@
 * [/account](api-reference/account.md)
 * [/org](api-reference/org.md)
 * [/user](api-reference/user.md)
+* [/backlogs](api-reference/backlogs.md)
+* [/items](api-reference/items.md)
+* [/initiatives](api-reference/initiatives.md)
+* [/bugs](api-reference/bugs.md)
+* [/comments](api-reference/comments.md)
+* [/subscribers](api-reference/subscribers.md)
 
 ## Install and Operate
 

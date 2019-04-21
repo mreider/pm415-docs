@@ -68,7 +68,6 @@ User retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
 {% api-method method="get" host="https://pm415.com" path="/api/user/apikey" %}
 {% api-method-summary %}
 Get API key
@@ -104,8 +103,6 @@ API key retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 {% api-method method="post" host="https://pm415.com" path="/api/user/apikey" %}
 {% api-method-summary %}
 Create new API key
@@ -117,8 +114,6 @@ Creates a new API key for the current user
 
 {% api-method-spec %}
 {% api-method-request %}
-
-
 {% api-method-headers %}
 {% api-method-parameter name="Authentication" type="string" required=true %}
 `Authorization: Bearer 50ca9ba0f7b1444fa55d5`
@@ -142,11 +137,6 @@ API key retrieved
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-
-
-
-
 
 {% api-method method="put" host="https://pm415.com" path="/api/user" %}
 {% api-method-summary %}
@@ -216,8 +206,6 @@ User retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-
-
 {% api-method method="get" host="https://pm415.com" path="/api/user/orgs" %}
 {% api-method-summary %}
 Get orgs
@@ -258,3 +246,4 @@ API key retrieved
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
