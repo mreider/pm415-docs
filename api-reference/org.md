@@ -33,7 +33,7 @@ Creates an organization.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Org created
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -79,7 +79,7 @@ Cake successfully retrieved.
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+Bad request
 {% endapi-method-response-example-description %}
 
 ```javascript
@@ -626,4 +626,3 @@ The ID of the org you want to work with
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
