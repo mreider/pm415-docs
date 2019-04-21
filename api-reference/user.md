@@ -84,6 +84,12 @@ Updates the current user
 `Authorization: Bearer 50ca9ba0f7b1444fa55d5`
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=true %}
+`{"email" : "matt@matt.com", "password": "1111", "confirmation": "1111", "firstName": "Matt", "lastName": "Reider" }`
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -129,3 +135,4 @@ User retrieved
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
