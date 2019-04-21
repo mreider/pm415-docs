@@ -457,7 +457,7 @@ Removes users from an organization. This does not delete the user's profile - ju
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgids" type="string" required=true %}
+{% api-method-parameter name=":orgid" type="string" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -502,11 +502,22 @@ Gives a user admin privileges. Admins can perform all operations on an org and i
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-path-parameters %}{% api-method-parameter name=":orgid" type="string" required=true %}
+The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+`Authorization: Bearer 50ca9ba0f7b1444fa55d5`
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="object" required=true %}
+`{"usersId": ["4", "6"]}`
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -516,7 +527,101 @@ Gives a user admin privileges. Admins can perform all operations on an org and i
 {% endapi-method-response-example-description %}
 
 ```
+{
+   "success": true
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
+
+{% api-method method="put" host="https://pm415.com" path="/api/org/:orgid/admin/revoke" %}
+{% api-method-summary %}
+Revoke admin
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Revokes a user's admin privileges.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}{% api-method-parameter name=":orgid" type="string" required=true %}
+The ID of the org you want to work with
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+`Authorization: Bearer 50ca9ba0f7b1444fa55d5`
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="object" required=true %}
+`{"usersId": ["4", "6"]}`
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+   "success": true
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+
+{% api-method method="put" host="https://pm415.com" path="/api/org/:orgid/admin/resetpassword" %}
+{% api-method-summary %}
+Reset password
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Resets user passwords and sends emails with reset links.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}{% api-method-parameter name=":orgid" type="string" required=true %}
+The ID of the org you want to work with
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+`Authorization: Bearer 50ca9ba0f7b1444fa55d5`
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="object" required=true %}
+`{"usersId": ["4", "6"]}`
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+   "success": true
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
