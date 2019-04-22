@@ -150,6 +150,8 @@ SENDGRID_PASSWORD="your-password"
 DATABASE_URL="mysql://root:root@localhost:3306/zagnut"
 NODE_ENV="production"
 PORT=3000
+DOMAIN_URL=pm415.com
+ELASTIC_SEARCH_URL=http://localhost:9200
 ```
 
 Load  environment variables into your session
@@ -173,8 +175,6 @@ Edit `~/pm415/config.js` to change the appkey and add your domain to the whiteli
 
 ```text
 ...
-
-const domain = 'yourdomain.com';
 
 siteUrl: 'http://localhost:3000/',
 appKey: 'create-a-new-appkey-here-random-numbers-etc',
