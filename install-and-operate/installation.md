@@ -145,13 +145,18 @@ sudo systemctl start caddy.service
 Edit the file `/etc/environment` and add the following environment variables
 
 ```text
-SENDGRID_USERNAME="your-account@email.com"
-SENDGRID_PASSWORD="your-password"
-DATABASE_URL="mysql://root:root@localhost:3306/zagnut"
-NODE_ENV="production"
-PORT=3000
+NODE_ENV=PRODUCTION
+KEEP_PROCESS_AWAKE=1
+DATABASE_URL=mysql://root:password@localhost:3306
+SENDGRID_USERNAME=foo
+SENDGRID_PASSWORD=bar
 DOMAIN_URL=pm415.com
 ELASTIC_SEARCH_URL=http://localhost:9200
+FEEDLIST=http://www.mindtheproduct.com/feed/,https://www.reddit.com/r/prodmgmt/.rss?format=xml
+WHITELIST=/localhost/,/pm415.com/
+APPKEY=097129fcba4ab7002604f7c27503fcf4b46c18708f2852cb654dc
+SITEURL_DEV=http://localhost
+SITE_PORT=8080
 ```
 
 Load  environment variables into your session
