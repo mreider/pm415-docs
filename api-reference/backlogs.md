@@ -58,7 +58,7 @@ Backlogs retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415:3000/api/backlogs/:orgid" path="" %}
+{% api-method method="post" host="http://pm415.com:3000/api/backlogs/:orgid" path="" %}
 {% api-method-summary %}
 Select full data of backlogs
 {% endapi-method-summary %}
