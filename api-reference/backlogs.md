@@ -187,3 +187,59 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="post" host="http://pm415.com:3000/api/backlogs/new/:orgid" path="" %}
+{% api-method-summary %}
+Create new backlog
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Creates a new backlog for the current organization
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="orgid" type="number" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=true %}
+{"title": "asdasd", "statusId": "2"}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "success": true,
+    "backlog": {
+        "title": "asdasd",
+        "statusId": "2",
+        "organization_id": 17,
+        "created_by": 13,
+        "plannedOn": "2019-04-24T15:10:13.229Z",
+        "updated_at": "2019-04-24T15:10:13.229Z",
+        "created_at": "2019-04-24T15:10:13.229Z",
+        "id": 19
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
