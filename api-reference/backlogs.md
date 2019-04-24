@@ -12,7 +12,7 @@ Shows the list of backlogs
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgID" type="number" required=true %}
+{% api-method-parameter name="orgId" type="number" required=true %}
 
 {% endapi-method-parameter %}
 
@@ -31,7 +31,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-Cake successfully retrieved.
+Backlogs retrieved
 {% endapi-method-response-example-description %}
 
 ```javascript
