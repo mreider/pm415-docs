@@ -1,6 +1,6 @@
 # /backlogs
 
-{% api-method method="get" host="http://pm415:3000/api/backlogs/:showArchived/:orgId" path="" %}
+{% api-method method="get" host="http://pm415.com/api/backlogs/:showarchived/:orgid" path="" %}
 {% api-method-summary %}
 Get list of backlogs
 {% endapi-method-summary %}
@@ -12,11 +12,11 @@ Shows the list of backlogs
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgId" type="number" required=true %}
+{% api-method-parameter name="orgid" type="number" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="showArchived" type="boolean" required=true %}
+{% api-method-parameter name="showarchived" type="boolean" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -58,7 +58,7 @@ Backlogs retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415:3000/api/backlogs/:orgId" path="" %}
+{% api-method method="post" host="http://pm415:3000/api/backlogs/:orgid" path="" %}
 {% api-method-summary %}
 Select full data of backlogs
 {% endapi-method-summary %}
@@ -70,7 +70,7 @@ Selects the full data of backlogs
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="OrgId" type="number" required=true %}
+{% api-method-parameter name="orgId" type="number" required=true %}
  
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
