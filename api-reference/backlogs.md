@@ -2,11 +2,11 @@
 
 {% api-method method="get" host="http://pm415:3000/api/backlogs/:showArchived/:orgId" path="" %}
 {% api-method-summary %}
-list of backlogs
+Get list of backlogs
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This endpoint show list  of backlogs
+Shows the list of backlogs
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -30,21 +30,21 @@ Cake successfully retrieved.
 
 ```javascript
 {
-    "name": "Cake's name",
-    "recipe": "Cake's recipe name",
-    "cake": "Binary cake"
-}
-```
-{% endapi-method-response-example %}
-
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Could not find a cake matching this query.
-{% endapi-method-response-example-description %}
-
-```javascript
-{
-    "message": "Ain't no cake like that."
+    "success": true,
+    "backlogs": [
+        {
+            "email": "hwyxlisjb@emlpro.com",
+            "firstName": "alena",
+            "lastName": "prilipko",
+            "id": 17,
+            "title": "hhhh",
+            "description": null,
+            "archived": 0,
+            "statusId": 1,
+            "createdBy": 13
+        }
+    ],
+    "admin": true
 }
 ```
 {% endapi-method-response-example %}
