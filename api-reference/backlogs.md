@@ -120,7 +120,7 @@ Selects the full data of backlogs
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="http://pm415:3000/api/backlogs/edit/:orgid/:backlogid" path="" %}
+{% api-method method="put" host="http://pm415.com:3000/api/backlogs/edit/:orgid/:backlogid" path="" %}
 {% api-method-summary %}
 Update current backlog
 {% endapi-method-summary %}
@@ -132,11 +132,11 @@ Updates the current backlog
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="OrgId" type="number" required=true %}
+{% api-method-parameter name="orgid" type="number" required=true %}
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="BacklogId" type="number" required=true %}
+{% api-method-parameter name="backlogid" type="number" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -161,7 +161,26 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "success": true,
+    "backlog": {
+        "assignee": null,
+        "organizationId": 17,
+        "id": 18,
+        "title": "mmm",
+        "description": null,
+        "statusId": "2",
+        "points": 0,
+        "createdAt": "2019-04-24T10:46:34.000Z",
+        "createdBy": 13,
+        "updatedAt": "2019-04-24T10:49:47.000Z",
+        "forecastedRelease": null,
+        "actualRelease": null,
+        "plannedOn": "2019-04-24T10:49:47.000Z",
+        "archived": 0,
+        "updated_at": "2019-04-24T14:45:38.899Z"
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
