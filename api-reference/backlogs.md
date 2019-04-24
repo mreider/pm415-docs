@@ -120,3 +120,51 @@ Selects the full data of backlogs
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="put" host="http://pm415:3000/api/backlogs/edit/:orgid/:backlogid" path="" %}
+{% api-method-summary %}
+Update current backlog
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Updates the current backlog
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="OrgId" type="number" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="BacklogId" type="number" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=true %}
+{"title": "mmm", "statusId": "2" }
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
