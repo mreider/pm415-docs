@@ -147,7 +147,37 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "success": true,
+    "item": {
+        "createdAt": "2019-04-26T12:31:28.000Z",
+        "archived": 0,
+        "ownerId": 19,
+        "points": 0,
+        "assignee": {
+            "firstName": "",
+            "lastName": "",
+            "email": "",
+            "id": 0
+        },
+        "id": 51,
+        "title": "abc",
+        "description": "Description",
+        "statusId": 1,
+        "order_index": 0,
+        "createdBy": 13,
+        "forecastedRelease": null,
+        "actualRelease": null,
+        "plannedOn": null,
+        "author": {
+            "firstName": "alena",
+            "lastName": "prilipko",
+            "id": 13,
+            "email": "hwyxlisjb@emlpro.com"
+        }
+    },
+    "admin": true
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
