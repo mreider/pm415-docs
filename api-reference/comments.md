@@ -129,11 +129,11 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 
 {% api-method method="put" host="http://pm415.com:3000/api/comments/edit/:commentId" path="" %}
 {% api-method-summary %}
-Update current backlog
+Update current comment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates the current backlog
+Updates the current comment
 {% endapi-method-description %}
 
 {% api-method-spec %}
