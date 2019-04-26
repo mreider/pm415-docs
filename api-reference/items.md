@@ -196,10 +196,26 @@ Updates the current item
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
+{% api-method-parameter name="itemid" type="number" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="orgid" type="number" required=true %}
 
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+{"statusId": "3", "order\_index": "2"} or any field of item
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -209,7 +225,31 @@ Updates the current item
 {% endapi-method-response-example-description %}
 
 ```
-
+{
+    "success": true,
+    "item": {
+        "assignee": null,
+        "organizationId": 17,
+        "id": 52,
+        "title": "abc",
+        "description": "Description",
+        "statusId": "3",
+        "points": 0,
+        "createdAt": "2019-04-26T13:11:13.000Z",
+        "createdBy": 13,
+        "updatedAt": "2019-04-26T13:11:13.000Z",
+        "forecastedRelease": null,
+        "actualRelease": null,
+        "plannedOn": null,
+        "ownerId": 19,
+        "ownerTable": "backlogs",
+        "mailers": "!hwyxlisjb@emlpro.com!",
+        "orderIndex": 0,
+        "archived": 0,
+        "order_index": "2",
+        "updated_at": "2019-04-26T13:34:25.182Z"
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
