@@ -157,7 +157,39 @@ Updates the current user
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="" type="string" required=true %}
-`{"email" : "matt@matt.com", "password": "1111", "confirmation": "1111", "firstName": "Matt", "lastName": "Reider" }`
+```javascript
+{
+    "success": true,
+    "user": {
+        "id": 4,
+        "email": "mattreider@tmnail.com",
+        "firstName": "Matthew",
+        "lastName": "Reider",
+        "organizations": [
+            {
+                "id": 16,
+                "name": "Bar",
+                "roles": [
+                    {
+                        "id": 1,
+                        "role": "Admin"
+                    }
+                ]
+            }
+        ]
+    },
+    "organization": {
+        "id": 16,
+        "name": "Bar",
+        "roles": [
+            {
+                "id": 1,
+                "role": "Admin"
+            }
+        ]
+    }
+}
+```
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}

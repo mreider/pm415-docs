@@ -243,3 +243,49 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="delete" host="http://pm415.com:3000/api/backlogs/:orgid/:backlogid" path="" %}
+{% api-method-summary %}
+Delete a backlog
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deletes the chosen backlog
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="" type="number" required=true %}
+backlogid
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="" type="number" required=true %}
+orgid
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "success": true,
+    "backlog": 18,
+    "message": "Backlog deleted"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
