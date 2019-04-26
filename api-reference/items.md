@@ -154,3 +154,81 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="put" host="http://pm415.com/api/items/edit/:orgId/:itemId" path="" %}
+{% api-method-summary %}
+Updates current item
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Updates the current item
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="delete" host="http://pm415.com:3000/api/items/:orgId/:itemId" path="" %}
+{% api-method-summary %}
+Delete item
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Deletes the current item
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="itemid" type="number" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="orgid" type="number" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "success": true,
+    "backlog": 49,
+    "message": "Item deleted"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
