@@ -6,7 +6,7 @@ Create a comment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates the comment 
+Creates the new comment 
 {% endapi-method-description %}
 
 {% api-method-spec %}
