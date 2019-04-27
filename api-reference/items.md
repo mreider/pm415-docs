@@ -24,7 +24,7 @@ Gets the list of items
 owner table of item \(backlogs\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="showarchived" type="string" required=true %}
+{% api-method-parameter name="showarchived" type="boolean" required=true %}
 true or false
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
