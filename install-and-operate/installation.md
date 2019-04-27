@@ -156,7 +156,7 @@ FEEDLIST=http://www.mindtheproduct.com/feed/,https://www.reddit.com/r/prodmgmt/.
 WHITELIST=/localhost/,/pm415.com/
 APPKEY=097129fcba4ab7002604f7c27503fcf4b46c18708f2852cb654dc
 SITEURL_DEV=http://localhost
-SITE_PORT=8080
+PORT=8080
 ```
 
 Load  environment variables into your session
