@@ -16,7 +16,7 @@ Gets the initiatives list
 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="showarchived" type="string" required=true %}
+{% api-method-parameter name="showarchived" type="boolean" required=true %}
 true or falst
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
