@@ -21,11 +21,11 @@ Gets the list of items
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="tablename" type="string" required=true %}
-
+owner table of item \(backlogs\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="showarchived" type="string" required=true %}
-
+true or false
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -45,7 +45,44 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 ```
 {
     "success": true,
-    "items": [],
+    "items": [
+        {
+            "email": "hwyxlisjb@emlpro.com",
+            "firstName": "alena",
+            "lastName": "prilipko",
+            "id": 50,
+            "title": "hhhh",
+            "statusId": 1,
+            "archived": 0,
+            "createdBy": 13,
+            "ownerId": 19,
+            "order_index": 0
+        },
+        {
+            "email": "hwyxlisjb@emlpro.com",
+            "firstName": "alena",
+            "lastName": "prilipko",
+            "id": 51,
+            "title": "abc",
+            "statusId": 1,
+            "archived": 0,
+            "createdBy": 13,
+            "ownerId": 19,
+            "order_index": 0
+        },
+        {
+            "email": "hwyxlisjb@emlpro.com",
+            "firstName": "alena",
+            "lastName": "prilipko",
+            "id": 52,
+            "title": "abc",
+            "statusId": 3,
+            "archived": 0,
+            "createdBy": 13,
+            "ownerId": 19,
+            "order_index": 2
+        }
+    ],
     "admin": true
 }
 ```
@@ -294,7 +331,86 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {
     "success": true,
     "backlog": 49,
-    "message": "Item deleted"
+    "message": "Item deleted"   
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="http://pm415.com/api/items/:orgId" path="" %}
+{% api-method-summary %}
+Get info on selected items
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Gets the information on the selected items
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="orgid" type="number" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=true %}
+{"itemsId": \["52","53"\], "fullSelect": true}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "success": true,
+    "items": [
+        {
+            "createdAt": "2019-04-26T13:11:13.000Z",
+            "archived": 0,
+            "ownerId": 19,
+            "points": 0,
+            "assignee": null,
+            "id": 52,
+            "title": "abc",
+            "description": "Description",
+            "statusId": 3,
+            "orderIndex": 2,
+            "createdBy": 13,
+            "forecastedRelease": null,
+            "actualRelease": null,
+            "plannedOn": null
+        },
+        {
+            "createdAt": "2019-04-27T06:28:47.000Z",
+            "archived": 0,
+            "ownerId": 19,
+            "points": 0,
+            "assignee": null,
+            "id": 53,
+            "title": "abc",
+            "description": "Description",
+            "statusId": 1,
+            "orderIndex": 0,
+            "createdBy": 13,
+            "forecastedRelease": null,
+            "actualRelease": null,
+            "plannedOn": null
+        }
+    ]
 }
 ```
 {% endapi-method-response-example %}
