@@ -27,7 +27,7 @@
 * [Ubuntu 18.04](install-and-operate/installation.md)
 * [Kubernetes](install-and-operate/docker.md)
 
-## Forking & Pull Requests
+## Contributing
 
-* [Modifying PM415](forking-and-pull-requests/modifying-pm415.md)
+* [Pull Requests](forking-and-pull-requests/modifying-pm415.md)
 

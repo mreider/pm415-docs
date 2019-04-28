@@ -1,4 +1,4 @@
-# Modifying PM415
+# Pull Requests
 
 PM415 is written in NodeJS / Vue. If you want to contribute to PM415 - create a fork, make your changes, and submit a pull request. We'll review it as time permits.
 
