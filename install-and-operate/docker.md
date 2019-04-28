@@ -4,25 +4,67 @@ description: This page describes how to deploy PM415 on Google Cloud using Kuber
 
 # Kubernetes
 
+## Install and configure docker + gcloud
+
+Follow the instructions to install [docker](https://docs.docker.com/install/) and [gcloud](https://cloud.google.com/sdk/).
+
+Add Google Container Registry to your docker config:
+
+```text
+gcloud auth configure-docker
+```
+
+Login to your Google account:
+
+```text
+gcloud auth login
+```
+
+## Build and push container image to GCR
+
+Download the PM415 git repository and change directories
+
+```text
+git clone https://github.com/mreider/pm415.git
+cd pm415
+```
+
+Build a docker image, tag it, and push to Google Container Registry \(GCR\). Replace the tag with your own Google Cloud Project name according to the format documented [here](https://cloud.google.com/container-registry/docs/pushing-and-pulling).
+
+```text
+docker build --tag gcr.io/pm415-238921/pm415 .
+docker push gcr.io/pm415-238921/pm415
+```
+
 ## Create a Kubernetes cluster
 
-1. Login to Google Cloud and choose navigate to **Kubernetes Engine**
-2. Choose **Create cluster**
-3. Choose **Standard cluster** and accept all the defaults
-4. Click **Create**
+Login to Google Cloud and navigate to **Kubernetes Engine** 
+
+Choose **Create cluster** 
+
+Choose **Standard cluster** and accept all the defaults 
+
+Click **Create**
 
 ## Create a kubectl config
 
-1. Install **kubectl** using [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-2. Return to the Kubernetes Engine and click edit icon - it's a little pencil:
+Install **kubectl** using [these instructions](https://kubernetes.io/docs/tasks/tools/install-kubectl/) 
 
-   ![](../.gitbook/assets/kubernetes-engine-pm415-google-cloud-platform-2019-04-27-18-19-20%20%281%29.png)
+Return to the **Kubernetes Engine** page in the Google Cloud Console and click edit icon.
 
-3. Write down the endpoint IP address.
-4. Click **Show credentials** and copy the certificate to your clipboard
-5. In a terminal - convert the key to base64 - the following works on a mac: `pbpaste | base64`
-6. return to the cluster credential window and copy the admin password
-7. Create a file named `config.yml` with the following contents:
+![](../.gitbook/assets/kubernetes-engine-pm415-google-cloud-platform-2019-04-27-18-19-20%20%281%29.png)
+
+When the edit screen appears - write down the **Endpoint IP address**. 
+
+Click **Show credentials** and copy the certificate to your clipboard In a terminal
+
+Convert the certificate to base64 - the following works on a mac: 
+
+`pbpaste | base64` 
+
+Return to the cluster credential window and copy the admin password
+
+Create a file named `config.yml` with the following contents:
 
 ```text
 kind: Config
@@ -51,8 +93,17 @@ users:
 
 ## Test your config
 
-1. Create the `KUBECONFIG` environment variable to reference your config: `export KUBECONFIG=$PWD/config.yml`
-2. Test your config `kubectl get node`
+Create the **KUBECONFIG** environment variable to reference your config: 
+
+```text
+export KUBECONFIG=~/config.yml 
+```
+
+Test your config 
+
+```text
+kubectl get node
+```
 
 This should return the list of Kubernetes nodes in your Google Cloud account.
 
