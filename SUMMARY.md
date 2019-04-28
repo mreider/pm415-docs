@@ -22,6 +22,7 @@
 * [/comments](api-reference/comments.md)
 * [/subscribers](api-reference/subscribers.md)
 * [/connections](api-reference/connections.md)
+* [/search](api-reference/search.md)
 
 ## Install and Operate
 
