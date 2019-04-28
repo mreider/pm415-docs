@@ -135,3 +135,17 @@ Create pods from the PM415 directory
  kubectl create -f pm415.yaml
 ```
 
+## Check the status of your pods
+
+Check all of your pods to see if any are failing. If you see evictions, you might be running out of resources.
+
+```text
+kubectl get pods --all-namespaces
+```
+
+Use the describe command to see specific error messages for a pod
+
+```text
+kubectl describe pod pm415-575765d57b-g2pkg
+```
+
