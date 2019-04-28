@@ -23,6 +23,7 @@
 * [/subscribers](api-reference/subscribers.md)
 * [/connections](api-reference/connections.md)
 * [/search](api-reference/search.md)
+* [/other](api-reference/other.md)
 
 ## Install and Operate
 
