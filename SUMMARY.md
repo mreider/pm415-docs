@@ -25,7 +25,7 @@
 ## Install and Operate
 
 * [Ubuntu 18.04](install-and-operate/installation.md)
-* [Kubernetes](install-and-operate/docker.md)
+* [Kubernetes](install-and-operate/kubernetes.md)
 
 ## Contributing
 
