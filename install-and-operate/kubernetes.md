@@ -115,3 +115,23 @@ gke-standard-cluster-1-445   Ready     <none>    23m       v1.11.8-gke.6
 gke-standard-cluster-1-446   Ready     <none>    23m       v1.11.8-gke.6
 ```
 
+## Create Kubernetes secrets
+
+PM415 deployments have a few different secrets to reference.
+
+```text
+kubectl create secret generic mysql
+kubectl create secret generic sendgrid --from-literal=password=YOUR_PASSWORD
+kubectl create secret generic appkey
+```
+
+## Create pods
+
+Create pods from the PM415 directory
+
+```text
+ kubectl create -f mysql.yaml
+ kubectl create -f es.yaml
+ kubectl create -f pm415.yaml
+```
+
