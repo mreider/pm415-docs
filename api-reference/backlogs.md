@@ -1,6 +1,6 @@
 # /backlogs
 
-{% api-method method="get" host="http://pm415.com" path="/api/backlogs/:showArchived/:orgId" %}
+{% api-method method="get" host="http://pm415.com" path="/api/backlogs/:showarchived/:orgid" %}
 {% api-method-summary %}
 Get list of backlogs
 {% endapi-method-summary %}
@@ -58,7 +58,7 @@ Backlogs retrieved
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415.com" path="/api/backlogs/:orgId" %}
+{% api-method method="post" host="http://pm415.com" path="/api/backlogs/:orgid" %}
 {% api-method-summary %}
 Select full data of backlogs
 {% endapi-method-summary %}
@@ -243,7 +243,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="http://pm415.com" path="/api/backlogs/:orgId/:backlogid" %}
+{% api-method method="delete" host="http://pm415.com" path="/api/backlogs/:orgid/:backlogid" %}
 {% api-method-summary %}
 Delete a backlog
 {% endapi-method-summary %}

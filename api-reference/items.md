@@ -1,6 +1,6 @@
 # /items
 
-{% api-method method="get" host="http://pm415.com/api/items/:showArchived/:tableName/:orgId/:ownerId" path="" %}
+{% api-method method="get" host="http://pm415.com" path="/api/items/:showArchived/:tableName/:orgId/:ownerId" %}
 {% api-method-summary %}
 Get list of items
 {% endapi-method-summary %}
