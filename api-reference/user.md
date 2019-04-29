@@ -12,7 +12,7 @@ Get current user
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets info about the current user
+Gets info about the current user.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -74,7 +74,7 @@ Get API key
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the current user's API key
+Gets the current user's API key.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -109,7 +109,7 @@ Create new API key
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates a new API key for the current user
+Creates a new API key for the current user.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -144,7 +144,7 @@ Update current user
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates the current user
+Updates the current user.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -156,7 +156,7 @@ Updates the current user
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 `{"email" : "matt@matt.com", "password": "1111", "confirmation": "1111", "firstName": "Matt", "lastName": "Reider" }`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}

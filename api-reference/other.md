@@ -1,6 +1,6 @@
 # /other
 
-{% api-method method="put" host="http://pm415.com:3000/api/orderindexchange/:orgId" path="" %}
+{% api-method method="put" host="https://pm415.com" path="/api/orderindexchange/:orgId" %}
 {% api-method-summary %}
 Change sorting order for initiatives or items
 {% endapi-method-summary %}

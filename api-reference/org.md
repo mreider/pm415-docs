@@ -186,7 +186,7 @@ Switches orgs and generates a new token. This is useful if you are building a us
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name=":orgid" type="number" required=true %}
-ID of the org you want to switch to
+The ID of the org you want to switch to
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -228,7 +228,7 @@ Update an org's name
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name=":orgid" type="number" required=true %}
-ID of the org you want to update
+The ID of the org you want to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -314,8 +314,8 @@ Gets information about an organization's users
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgid" type="string" required=true %}
-ID of the org you want to query
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org you want to query
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -413,6 +413,12 @@ Creates an invite link for a new user.
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org you want to work with
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
 {% api-method-headers %}
 {% api-method-parameter name="Authentication" type="string" required=true %}
 `Authorization: Bearer 50ca9ba0f7b1444fa55d5`
@@ -420,7 +426,7 @@ Creates an invite link for a new user.
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 `{email: “suziereider@tmail.com”}`
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -455,7 +461,7 @@ Removes users from an organization. This does not delete the user's profile - ju
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-parameter name=":orgid" type="number" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -501,7 +507,7 @@ Gives a user admin privileges. Admins can perform all operations on an org and i
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-parameter name=":orgid" type="number" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -547,7 +553,7 @@ Revokes a user's admin privileges.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-parameter name=":orgid" type="number" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
@@ -593,7 +599,7 @@ Resets user passwords and sends emails with reset links.
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name=":orgid" type="string" required=true %}
+{% api-method-parameter name=":orgid" type="number" required=true %}
 The ID of the org you want to work with
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
