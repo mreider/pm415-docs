@@ -120,12 +120,21 @@ gke-standard-cluster-1-446   Ready     <none>    23m       v1.11.8-gke.6
 PM415 deployments have a few different secrets to reference.
 
 ```text
-kubectl create secret generic mysql
+kubectl create secret generic mysql --from-literal=password=RADOM_PASSWORD
 kubectl create secret generic sendgrid --from-literal=password=YOUR_PASSWORD
-kubectl create secret generic appkey
+kubectl create secret generic appkey --from-literal=password=RANDOM_KEY
 ```
 
 ## Create pods
+
+Edit the file `pm415.yaml` and replace the following values with your information. If you do not change the DOMAIN\_URL to a valid domain - the installation will fail CORS security rules.
+
+```text
+          - name: DOMAIN_URL
+            value: your-domain.com
+          - name: SENDGRID_USERNAME
+            value: your-sendgrid-account
+```
 
 Create pods from the PM415 directory
 
@@ -148,4 +157,32 @@ Use the describe command to see specific error messages for a pod
 ```text
 kubectl describe pod pm415-575765d57b-g2pkg
 ```
+
+## Expose pods as services
+
+This will expose two internal ip's for MySQL and ElasticSearch, and a Load Balancer for PM415.
+
+```text
+kubectl create -f mysql-service.yaml
+kubectl create -f elastic-search-service.yaml
+kubectl create -f pm415.yaml
+```
+
+## Get IP address and configure DNS
+
+Wait a few minutes and then run this command to get the PM415 load balancer IP address:
+
+```text
+kubectl get svc -l app=pm415
+```
+
+This will return information like the following:
+
+```text
+pm415     LoadBalancer   10.7.250.50   35.238.238.234   80:31851/TCP   1m
+```
+
+Use this IP address for your DNS A record. Make sure this is the same value as the DOMAIN\_URL you set in the `pm415.yml` deployment configuration.
+
+![](../.gitbook/assets/screen-shot-2019-04-28-at-7.35.43-pm.png)
 
