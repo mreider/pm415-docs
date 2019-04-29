@@ -1,31 +1,31 @@
 # /items
 
-{% api-method method="get" host="http://pm415.com" path="/api/items/:showArchived/:tableName/:orgId/:ownerId" %}
+{% api-method method="get" host="http://pm415.com" path="/api/items/:showarchived/:tablename/:orgid/:ownerid" %}
 {% api-method-summary %}
 Get list of items
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the list of items
+Gets the list of items for the org.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="ownerid" type="number" required=true %}
-
+{% api-method-parameter name=":ownerid" type="number" required=true %}
+The ID of the backlog
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="tablename" type="string" required=true %}
-owner table of item \(backlogs\)
+{% api-method-parameter name=":tablename" type="string" required=true %}
+Owner table of item \(backlogs\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="showarchived" type="boolean" required=true %}
-true or false
+{% api-method-parameter name=":showarchived" type="boolean" required=true %}
+True or false
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -91,31 +91,31 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415.com:3000/api/items/new/:orgid" path="" %}
+{% api-method method="post" host="http://pm415.com" path="/api/items/new/:orgid" %}
 {% api-method-summary %}
 Create new item
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates the item
+Creates the item.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
 {% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=false %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
 Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"ownerTable": "backlogs", "ownerId": "19", "title": "abc", "description": "Description"}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -149,24 +149,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com/api/items/:orgId/:itemId" path="" %}
+{% api-method method="get" host="http://pm415.com" path="/api/items/:orgid/:itemid" %}
 {% api-method-summary %}
 Get current item
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the information about the current item
+Gets the information about the current item.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="itemid" type="number" required=true %}
-
+{% api-method-parameter name=":itemid" type="number" required=true %}
+The ID of the item you want to work with
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -221,24 +221,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="http://pm415.com/api/items/edit/:orgId/:itemId" path="" %}
+{% api-method method="put" host="http://pm415.com" path="/api/items/edit/:orgid/:itemid" %}
 {% api-method-summary %}
 Updates current item
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates the current item
+Updates the current item.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="itemid" type="number" required=true %}
-
+{% api-method-parameter name=":itemid" type="number" required=true %}
+The ID of the item you want to update
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -249,7 +249,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
+{% api-method-parameter name="" type="object" required=true %}
 {"statusId": "3", "order\_index": "2"} or any field of item
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -293,24 +293,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="http://pm415.com:3000/api/items/:orgId/:itemId" path="" %}
+{% api-method method="delete" host="http://pm415.com" path="/api/items/:orgid/:itemid" %}
 {% api-method-summary %}
 Delete item
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes the current item
+Deletes the current item.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="itemid" type="number" required=true %}
-
+{% api-method-parameter name=":itemid" type="number" required=true %}
+The ID of the item you want to delete
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the of the org.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -338,20 +338,20 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415.com/api/items/:orgId" path="" %}
+{% api-method method="post" host="http://pm415.com" path="/api/items/:orgid" %}
 {% api-method-summary %}
 Get info on selected items
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the information on the selected items
+Gets the information on the selected items.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+ The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -362,7 +362,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"itemsId": \["52","53"\], "fullSelect": true}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
