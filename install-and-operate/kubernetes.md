@@ -4,6 +4,10 @@ description: This page describes how to deploy PM415 on Google Cloud using Kuber
 
 # Kubernetes
 
+{% hint style="warning" %}
+This PM415 Kubernetes deployment is for demos only - there is no persistence and data loss will occur. For a production deploy you must change the MySQL and Elastic Search Deployment files to include persistent storage, increase the cluster sizes, and enable node-to-node communication in Elastic Search.
+{% endhint %}
+
 ## Install and configure docker + gcloud
 
 Follow the instructions to install [docker](https://docs.docker.com/install/) and [gcloud](https://cloud.google.com/sdk/).
