@@ -1,23 +1,23 @@
 # /initiatives
 
-{% api-method method="get" host="http://pm415.com/api/initiatives/all/:showarchived/:orgid" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/initiatives/all/:showarchived/:orgid" %}
 {% api-method-summary %}
 Get initiatives list
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the initiatives list
+Gets the initiatives list.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="showarchived" type="boolean" required=true %}
-true or falst
+{% api-method-parameter name=":showarchived" type="boolean" required=true %}
+True or false
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -63,24 +63,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com:3000/api/initiatives/:orgId/:initiativeId" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/initiatives/:orgid/:initiativeid" %}
 {% api-method-summary %}
 Get current initiative
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the current initiative information
+Gets the current initiative information.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="initiativeid" type="number" required=true %}
-
+{% api-method-parameter name=":initiativeid" type="number" required=true %}
+The ID of the initiative
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -126,20 +126,20 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415.com:3000/api/initiatives/:orgId" path="" %}
+{% api-method method="post" host="https://pm415.com" path="/api/initiatives/:orgid" %}
 {% api-method-summary %}
 Get info on selected initiatives
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the information on  the selected initiatives
+Gets the information on  the selected initiatives.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -150,7 +150,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"initiativeId": \["25"\], "fullSelect": true}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -186,20 +186,20 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415.com:3000/api/initiatives/new/:orgid" path="" %}
+{% api-method method="post" host="https://pm415.com" path="/api/initiatives/new/:orgid  " %}
 {% api-method-summary %}
 Create new initiative
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates the new initiative
+Creates the new initiative.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -210,7 +210,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"title": "Api created", "description": "api created Description", "statusId":"9", "horizon":"111111"}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -243,7 +243,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="http://pm415.com:3000/api/initiatives/edit/:orgId/:InitiativeId" path="" %}
+{% api-method method="put" host="https://pm415.com" path="/api/initiatives/edit/:orgid/:initiativeid" %}
 {% api-method-summary %}
 Update current initiative
 {% endapi-method-summary %}
@@ -255,12 +255,12 @@ Updates the current initiative
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="initiativeid" type="number" required=true %}
-
+{% api-method-parameter name=":initiativeid" type="number" required=true %}
+The ID of the initiative you want to update
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -271,7 +271,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"title": "aasdsadasdasdasdasd3", "statusId": "10"}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -308,24 +308,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="http://pm415.com:3000/api/initiatives/:orgId/:InitiativeId" path="" %}
+{% api-method method="delete" host="https://pm415.com" path="/api/initiatives/:orgid/:initiativeid" %}
 {% api-method-summary %}
 Delete initiative
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes the initiative
+Deletes the initiative.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="initiativeid" type="number" required=true %}
-
+{% api-method-parameter name=":initiativeid" type="number" required=true %}
+The ID of the initiative you want to delete
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
