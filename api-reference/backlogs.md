@@ -1,3 +1,7 @@
+---
+description: 'These methods allow you to create, edit, delete and get info on backlogs.'
+---
+
 # /backlogs
 
 {% api-method method="get" host="http://pm415.com" path="/api/backlogs/:showarchived/:orgid" %}

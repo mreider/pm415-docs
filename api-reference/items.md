@@ -1,3 +1,7 @@
+---
+description: 'These methods allow you to create, edit, delete and get info on items.'
+---
+
 # /items
 
 {% api-method method="get" host="http://pm415.com" path="/api/items/:showarchived/:tablename/:orgid/:ownerid" %}

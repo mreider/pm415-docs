@@ -1,3 +1,7 @@
+---
+description: 'These methods allow you to create, edit, delete and get info on bugs.'
+---
+
 # /bugs
 
 {% api-method method="post" host="https://pm415.com" path="/api/bugs/new/:orgid" %}

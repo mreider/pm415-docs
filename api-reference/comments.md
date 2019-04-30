@@ -1,3 +1,7 @@
+---
+description: 'These methoda allow you to create, edit, delete and get info on comments.'
+---
+
 # /comments
 
 {% api-method method="post" host="http://pm415.com:3000/api/comments/new/tablename/:orgid/:ownerid" path="" %}

@@ -1,3 +1,7 @@
+---
+description: 'These methods allow you to create, edit, delete and get info on initiatives.'
+---
+
 # /initiatives
 
 {% api-method method="get" host="https://pm415.com" path="/api/initiatives/all/:showarchived/:orgid" %}
