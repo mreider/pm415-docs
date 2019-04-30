@@ -1,23 +1,29 @@
+---
+description: >-
+  These methods allow you to create and get info on connections between items,
+  bugs and initiatives.
+---
+
 # /connections
 
-{% api-method method="post" host="http://pm415.com:3000/api/connections/:ownerTable/:id" path="" %}
+{% api-method method="post" host="https://pm415.com" path="/api/connections/:ownertable/:id" %}
 {% api-method-summary %}
 Create connection
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates the connection between items, bugs, iniatives
+Creates the connection between items, bugs, iniatives.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="id" type="number" required=true %}
-item id, bug id or initiative id
+{% api-method-parameter name=":id" type="number" required=true %}
+The ID of the bug or initiative or item
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="ownertable" type="string" required=true %}
-items, bugs or initiatives
+{% api-method-parameter name=":ownertable" type="string" required=true %}
+"Bugs" or "Initiatives" or "Items"
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -28,7 +34,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"items": \[\], "initiatives": \[28\], "bugs": \[\], "backlogs": \[\], "delete": false}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -50,28 +56,28 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com:3000/api/connections/:needInfoTable/:infoTable/:ID" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/connections/:needinfotable/:infotable/:id" %}
 {% api-method-summary %}
 Get connections list
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the list of connections
+Gets the list of connections.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="id" type="number" required=true %}
-needinfo id
+{% api-method-parameter name=":id" type="number" required=true %}
+The ID of the bug or initiative or item
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="infotable" type="string" required=true %}
-item table, bug table etc.
+{% api-method-parameter name=":infotable" type="string" required=true %}
+"Bugs" or "Initiatives" or "Items"
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="needinfotable" type="string" required=true %}
-item table, bug table etc.
+{% api-method-parameter name=":needinfotable" type="string" required=true %}
+ "Bugs" or "Initiatives" or "Items"
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
