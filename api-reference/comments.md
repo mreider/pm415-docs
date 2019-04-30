@@ -1,27 +1,31 @@
 ---
-description: 'These methoda allow you to create, edit, delete and get info on comments.'
+description: 'These methods allow you to create, edit, delete and get info on comments.'
 ---
 
 # /comments
 
-{% api-method method="post" host="http://pm415.com:3000/api/comments/new/tablename/:orgid/:ownerid" path="" %}
+{% api-method method="post" host="https://pm415.com" path="/api/comments/new/:ownertable/:orgid/:owmerid" %}
 {% api-method-summary %}
 Create a comment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates the new comment 
+Creates the new comment. 
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="ownerid" type="number" required=true %}
-
+{% api-method-parameter name=":ownertable" type="string" required=true %}
+"Bugs" or "Initiatives" or "Items"
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
+{% api-method-parameter name=":ownerid" type="number" required=true %}
+The ID of the bug or initiative or item
+{% endapi-method-parameter %}
 
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -59,28 +63,28 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com:3000/api/comments/get/:ownerTable/:orgId/:ownerId" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/comments/get/:ownertable/:orgid/:ownerid" %}
 {% api-method-summary %}
 Get list of comments
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the list of comments
+Gets the list of comments.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="ownerid" type="number" required=true %}
-
+{% api-method-parameter name=":ownerid" type="number" required=true %}
+The ID of the bug or initiative or item
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="ownertable" type="string" required=true %}
-name of table parent comment
+{% api-method-parameter name=":ownertable" type="string" required=true %}
+"Bugs" or "Initiatives" or "Items"
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -131,20 +135,20 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="http://pm415.com:3000/api/comments/edit/:commentId" path="" %}
+{% api-method method="put" host="https://pm415.com" path="/api/comments/edit/:commentid" %}
 {% api-method-summary %}
 Update current comment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates the current comment
+Updates the current comment.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="commentid" type="number" required=true %}
-
+{% api-method-parameter name=":commentid" type="number" required=true %}
+The ID of the comment you want to update
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -183,24 +187,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="http://localhost:3000/api/comments/delete/:orgId/:commentId" path="" %}
+{% api-method method="delete" host="https://pm415.com" path="/api/comments/delete/:orgid/:commentid" %}
 {% api-method-summary %}
 Delete a comment
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Delets the chosen comment
+Delets the chosen comment.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="commentid" type="number" required=true %}
-
+{% api-method-parameter name=":commentid" type="number" required=true %}
+The ID of the comment you want to delete
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
