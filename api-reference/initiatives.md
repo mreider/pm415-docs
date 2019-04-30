@@ -249,7 +249,7 @@ Update current initiative
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates the current initiative
+Updates the current initiative.
 {% endapi-method-description %}
 
 {% api-method-spec %}

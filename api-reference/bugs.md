@@ -1,19 +1,19 @@
 # /bugs
 
-{% api-method method="post" host="http://pm415.com:3000/api/bugs/new/:orgId" path="" %}
+{% api-method method="post" host="https://pm415.com" path="/api/bugs/new/:orgid" %}
 {% api-method-summary %}
-Create new bag
+Create new bug
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Creates new bag
+Creates a new bug.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -24,7 +24,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"title": "Api created", "description": "api created Description", "statusId":"14", "createdBy": "1"}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -57,7 +57,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com:3000/api/bugs/full/:showarchived/:orgId/:fullSelect" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/bugs/full/:showarchived/:orgid/:fullselect" %}
 {% api-method-summary %}
 Get bug list
 {% endapi-method-summary %}
@@ -69,16 +69,16 @@ Gets the list of bugs
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="fullselect" type="boolean" required=true %}
-true or false
+{% api-method-parameter name=":fullselect" type="boolean" required=true %}
+True or false
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="showarchived" type="boolean" required=true %}
-true or false
+{% api-method-parameter name=":showarchived" type="boolean" required=true %}
+True or false
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -133,24 +133,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com:3000/api/bugs/:orgId/:bugId" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/bugs/:orgid/:bugid" %}
 {% api-method-summary %}
 Get info on current bug
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the information on the current bug
+Gets the information on the current bug.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="bugid" type="number" required=true %}
-
+{% api-method-parameter name=":bugid" type="number" required=true %}
+The ID of the bug you want to work with
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -200,20 +200,20 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="http://pm415.com:3000/api/bugs/:orgID" path="" %}
+{% api-method method="post" host="https://pm415.com" path="/api/bugs/:orgid" %}
 {% api-method-summary %}
 Get list of selected bugs
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the list of selected bugs
+Gets the list of selected bugs.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -224,7 +224,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"bugId": \["5"\], "fullSelect": true}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -260,24 +260,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="http://pm415.com:3000/api/bugs/edit/:orgId/:bugId" path="" %}
+{% api-method method="put" host="https://pm415.com" path="/api/bugs/edit/:orgid/:bugid" %}
 {% api-method-summary %}
 Update current bug
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Updates the current bug
+Updates the current bug.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="bugid" type="number" required=true %}
-
+{% api-method-parameter name=":bugid" type="number" required=true %}
+The ID of the bug you want to update
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -288,7 +288,7 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-headers %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
+{% api-method-parameter name="" type="object" required=true %}
 {"title": "aasdsadasdasdasdasd3", "statusId": "16"}
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
@@ -326,24 +326,24 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="http://pm415.com:3000/api/bugs/:ogrId/:bugId" path="" %}
+{% api-method method="delete" host="https://pm415.com" path="/api/bugs/:ogrid/:bugid" %}
 {% api-method-summary %}
 Delete bug
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Deletes the bug
+Deletes the bug.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="bugid" type="number" required=true %}
-
+{% api-method-parameter name=":bugid" type="number" required=true %}
+The ID of the bug you want to delete
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
