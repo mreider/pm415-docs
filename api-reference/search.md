@@ -1,27 +1,27 @@
 # /search
 
-{% api-method method="get" host="http://pm415.com:3000/api/search/:query/:orgId/:showArchived" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/search/:query/:orgid/:showarchived" %}
 {% api-method-summary %}
 Get information on a request
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Gets the information on a text string request
+Gets the information on a text string request.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="showarchived" type="boolean" required=true %}
-true or false
+{% api-method-parameter name=":showarchived" type="boolean" required=true %}
+True or false
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="orgid" type="number" required=true %}
-
+{% api-method-parameter name=":orgid" type="number" required=true %}
+The ID of the org
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="query" type="string" required=true %}
-
+{% api-method-parameter name=":query" type="string" required=true %}
+Your text string request
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 
@@ -98,13 +98,13 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="http://pm415.com:3000/api/search/reindex" path="" %}
+{% api-method method="get" host="https://pm415.com" path="/api/search/reindex" %}
 {% api-method-summary %}
 Add all data
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Adds all data from database into elastic index
+Adds all data from database into elastic index.
 {% endapi-method-description %}
 
 {% api-method-spec %}
