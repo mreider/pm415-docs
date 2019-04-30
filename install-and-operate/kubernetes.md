@@ -169,7 +169,7 @@ This will expose two internal ip's for MySQL and ElasticSearch, and a Load Balan
 ```text
 kubectl create -f mysql-service.yaml
 kubectl create -f elastic-search-service.yaml
-kubectl create -f pm415.yaml
+kubectl create -f pm415-service.yaml
 ```
 
 ## Get IP address and configure DNS
