@@ -147,7 +147,8 @@ Edit the file `/etc/environment` and add the following environment variables
 ```text
 NODE_ENV=production
 KEEP_PROCESS_AWAKE=1
-DATABASE_URL=mysql://root:password@localhost:3306
+DATABASE_HOST=mysql://localhost
+DATABASE_PASSWORD=buzz
 SENDGRID_USERNAME=foo
 SENDGRID_PASSWORD=bar
 DOMAIN_URL=pm415.com
