@@ -127,7 +127,7 @@ Edit the file `/etc/caddy/Caddyfile` as follows:
 your-site.com {
         tls email@email.com
         gzip
-        proxy / localhost:3000 {
+        proxy / localhost:8080{
                 transparent
                 websocket
         }
@@ -145,17 +145,17 @@ sudo systemctl start caddy.service
 Edit the file `/etc/environment` and add the following environment variables
 
 ```text
+SENDGRID_USERNAME="fff@gmail.com"
+SENDGRID_PASSWORD="foo"
+DATABASE_HOST="localhost"
+DATABASE_PASSWORD="foo"
+PORT=8080
 NODE_ENV=production
 KEEP_PROCESS_AWAKE=1
-DATABASE_HOST=mysql://localhost
-DATABASE_PASSWORD=buzz
-SENDGRID_USERNAME=foo
-SENDGRID_PASSWORD=bar
 DOMAIN_URL=pm415.com
 ELASTIC_SEARCH_URL=http://localhost:9200
-APPKEY=097129fcba4ab700260
+APPKEY=09712c18708f2852cb654dc
 SITEURL_DEV=http://localhost
-PORT=8080
 ```
 
 Load  environment variables into your session
