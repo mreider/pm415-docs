@@ -4,6 +4,72 @@ description: 'These methods aloow you to create, delete and get info on subscrib
 
 # /subscribers
 
+{% api-method method="get" host="http://pm415.com/api/subscribers/all/" path=":ownertable/:ownerid" %}
+{% api-method-summary %}
+List of all subscribers with child subscribers, \(like comment\)
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="ownerid" type="string" required=true %}
+owner id \(id - item or initative or bug\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="ownertable" type="string" required=true %}
+Owner subscribers \(item, initiative, bug\)
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-headers %}
+{% api-method-parameter name="Authentication" type="string" required=true %}
+Authorization: Bearer 50ca9ba0f7b1444fa55d5
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+"success": true,
+"subscribers":{
+"ownerSubscribers":[
+{
+"email": "ekibcirkc@emltmp.com",
+"firstName": "Axel",
+"lastName": "Last",
+"id": 24
+}
+],
+"subownerSubscribers":[
+{"email": "nosuchip@gmail.com", "firstName": "Iddqd", "lastName": "Idkfa", "id": 1,…},
+{"email": "zverozabr@yandex.ru", "firstName": "Alex", "lastName": "Prilipko", "id": 2,…},
+{
+"email": "admin@admin.com",
+"firstName": "Axel",
+"lastName": "Baum",
+"id": 3,
+"subowner": "comments"
+},
+{"email": "msskwqad@supere.ml", "firstName": "msskwqad@supere.ml", "lastName": "msskwqad@supere.ml",…}
+]
+}
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="post" host="https://pm415.com" path="/api/subscribers/new/:ownertable/:ownerid" %}
 {% api-method-summary %}
 Create new subscriber
@@ -251,72 +317,6 @@ Authorization: Bearer 50ca9ba0f7b1444fa55d5
 ```
 {
     "success": true
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="get" host="http://pm415.com/api/subscribers/all/" path=":ownertable/:ownerid" %}
-{% api-method-summary %}
-List of all subscribers with child subscribers, \(like comment\)
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="ownerid" type="string" required=true %}
-owner id \(id - item or initative or bug\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="ownertable" type="string" required=true %}
-Owner subscribers \(item, initiative, bug\)
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
-{% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
-Authorization: Bearer 50ca9ba0f7b1444fa55d5
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-{
-"success": true,
-"subscribers":{
-"ownerSubscribers":[
-{
-"email": "ekibcirkc@emltmp.com",
-"firstName": "Axel",
-"lastName": "Last",
-"id": 24
-}
-],
-"subownerSubscribers":[
-{"email": "nosuchip@gmail.com", "firstName": "Iddqd", "lastName": "Idkfa", "id": 1,…},
-{"email": "zverozabr@yandex.ru", "firstName": "Alex", "lastName": "Prilipko", "id": 2,…},
-{
-"email": "admin@admin.com",
-"firstName": "Axel",
-"lastName": "Baum",
-"id": 3,
-"subowner": "comments"
-},
-{"email": "msskwqad@supere.ml", "firstName": "msskwqad@supere.ml", "lastName": "msskwqad@supere.ml",…}
-]
-}
 }
 ```
 {% endapi-method-response-example %}
